@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="AI Case Summary" icon-name="utility:einstein">
+        <lightning-button
+            slot="actions"
+            label="Generate"
+            variant="brand"
+            onclick={handleGenerate}
+            disabled={isLoading}
+        ></lightning-button>
+
+        <div class="slds-p-horizontal_medium">
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Generating summary" size="small"></lightning-spinner>
+            </template>
+            <template lwc:if={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+            <template lwc:if={hasBullets}>
+                <ul class="slds-list_dotted">
+                    <template for:each={bullets} for:item="bullet">
+                        <li key={bullet.id}>{bullet.text}</li>
+                    </template>
+                </ul>
+                <p class="slds-text-body_small slds-text-color_weak slds-m-top_small">
+                    AI-generated. Verify before sharing with customers.
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

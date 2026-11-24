@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certificate_Name__c</fullName>
+    <description>Unique name of the certificate in Certificate and Key Management used to sign the JWT.</description>
+    <label>Certificate Name</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+</CustomField>
